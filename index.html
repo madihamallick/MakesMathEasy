@@ -103,7 +103,7 @@
 
 <body>
     <div class="row">
-        <div class="col-12" style="height:10vh;">
+        <div class="col-11 ml-md-5" style="height:10vh;">
             <nav class="uppernav">
                 <p id="maintext">
                     Makes Math Easy
@@ -271,7 +271,9 @@
         function openOption(path, displayname) {
             $("#mainsection").hide().load(path, function (response, status, xhttp) {
                 if (xhttp.status == 200) {
-
+                    $("nav").parent().css('z-index', 1e5);
+                    $("nav").css('z-index', 1e5);
+                    $(".uppernav").css('z-index', 1e6)
                 }
             }).fadeIn('1000');
             document.getElementById('maintext').innerHTML = displayname;
